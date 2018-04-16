@@ -3,9 +3,12 @@ from PyQt5.QtWidgets import *
 from PyQt5 import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from Preprocesamiento.tokenizaNoticias import tokenizar
+from Preprocesamiento.lematizaNoticias import lematizar
 
 class LoadFileWindow(QMainWindow):
 	"""docstring for LoadFileWindow"""
+	nombre = " "
 	def __init__(self):
 		QMainWindow.__init__(self)
 		uic.loadUi("LoadFile.ui", self)
@@ -39,6 +42,6 @@ class LoadFileWidget(QWidget):
 		print("umm...")
 		options = QFileDialog.Options()
 		options |= QFileDialog.DontUseNativeDialog
-		fileName, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*);;Python Files (*.py)", options=options)
+		fileName, _ = QFileDialog.getOpenFileName(self,"Seleccion la(s) noticias", "/Documentos/","Text files (*.txt)", options=options)
 		if fileName:
 			return fileName

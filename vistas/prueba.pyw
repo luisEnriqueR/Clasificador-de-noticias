@@ -6,6 +6,7 @@ from PyQt5.QtCore import *
 from LoadFile import LoadFileWindow
 from LoadText import LoadTextWindow
 from Classifier import *
+from algo import TabsWindow
 import ctypes
 
 """class LoadFileWindow(QMainWindow):
@@ -49,7 +50,8 @@ class Ventana(QMainWindow):
 		self.ui1 = LoadTextWindow()
 
 	def openClassifierWindow(self):
-		self.ui2 = Classifier()
+		#self.ui2 = Classifier()
+		self.ui2 = TabsWindow()
 
 app = QApplication(sys.argv)
 _ventana = Ventana()
